@@ -1,7 +1,7 @@
 const audioElement = document.getElementById('audio');
 const button = document.getElementById('button');
 
-// VoiceRSS Javascript SDK
+// VoiceRSS Javascript SDK from link https://rapidapi.com/voicerss/api/text-to-speech-1/
 const VoiceRSS={speech:function(e){
     this._validate(e),
     this._request(e)
@@ -106,7 +106,7 @@ async function fetchJokeFromAPI() {
 
 function insertNewJoke(joke) {
     VoiceRSS.speech({
-        key: 'aa8054b56c6a4fe6bca32d147c9717db',
+        key: 'USE-YOUR-API-KEY-FROM-RAPIDAPI/TTS-HERE',
         src: joke,
         hl: 'en-us',
         v: 'Linda',
