@@ -96,7 +96,6 @@ async function fetchJokeFromAPI() {
         const response = await fetch(apiURL);
         const data = await response.json();
         joke = (data.setup) ? `${data.setup} ... ${data.delivery}`: data.joke; 
-        console.log(joke);
         insertNewJoke(joke);
         
     } catch (error) {
