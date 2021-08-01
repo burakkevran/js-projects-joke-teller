@@ -97,7 +97,7 @@ async function fetchJokeFromAPI() {
         const data = await response.json();
         joke = (data.setup) ? `${data.setup} ... ${data.delivery}`: data.joke; 
         console.log(joke);
-        tellMe(joke);
+        insertNewJoke(joke);
         
     } catch (error) {
         console.log(error);
@@ -106,7 +106,7 @@ async function fetchJokeFromAPI() {
     }
 }
 
-function tellMe(joke) {
+function insertNewJoke(joke) {
     VoiceRSS.speech({
         key: 'aa8054b56c6a4fe6bca32d147c9717db',
         src: joke,
