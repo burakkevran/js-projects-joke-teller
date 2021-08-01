@@ -92,7 +92,6 @@ async function fetchJokeFromAPI() {
     let joke = '';
     const apiURL = 'https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit';
     try {
-        button.disabled = true;
         const response = await fetch(apiURL);
         const data = await response.json();
         joke = (data.setup) ? `${data.setup} ... ${data.delivery}`: data.joke; 
@@ -120,3 +119,4 @@ function insertNewJoke(joke) {
 
 button.addEventListener('click', fetchJokeFromAPI);
 audioElement.addEventListener('ended', () => button.disabled = false);
+audioElement.addEventListener('play', () => button.disabled = true);
